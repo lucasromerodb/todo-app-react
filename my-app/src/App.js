@@ -58,7 +58,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navigation title="App de tareas" tasks={this.state.todos.length} />
+        <Navigation title="TODO App" tasks={this.state.todos.length} />
         <div className="container">
           <div className="row mt-4">
             <TodoForm onAddTodo={this.handleAddTodo} />
