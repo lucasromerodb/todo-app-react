@@ -21,6 +21,17 @@ class App extends Component {
     })
   }
 
+  handleRemoveTodo(index) {
+    console.log(index);
+    if (window.confirm('Are your sure you want to delete it?')) {
+      this.setState({
+        todos: this.state.todos.filter((todo, i) => {
+          return i !== index
+        })
+      })
+    }
+  }
+
   render() {
 
     const myTodos = this.state.todos.map((todo, i) => {
@@ -36,6 +47,9 @@ class App extends Component {
             </div>
             <div className="card-footer">
               <mark>{todo.responsible}</mark>
+            </div>
+            <div className="card-footer">
+              <button className="btn btn-danger" onClick={this.handleRemoveTodo.bind(this, i)}>Remove</button>
             </div>
           </div>
         </div>
