@@ -38,7 +38,11 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation title="App de tareas" tasks={this.state.todos.length} />
-        <TodoForm />
+        <div className="container">
+          <div className="row mt-4">
+            <TodoForm />
+          </div>
+        </div>
         <div className="container">
           <div className="row mt-4">
             {myTodos}
